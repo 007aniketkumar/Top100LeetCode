@@ -73,11 +73,11 @@ public class AddTwoNumbers {
 		
 	 }
 	  //in case you reach the end , check the last value , no need to carry over, so sum should be as it is.
-	 if(sum>0) {//carry over of the last value, to an extra node in the result
+	 if(sum>0) {//carry over of the last value, to an extra node in the result.
 		 result.next = new ListNode(sum);
  
 	 }
-	 return headNode.next;//because the head has 0 , so start from the next node, where the value is computed
+	 return headNode.next;//because the head has 0 , so start from the next node, where the value is computed.
     }
 	
 	
