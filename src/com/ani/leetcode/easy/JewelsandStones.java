@@ -25,6 +25,9 @@ Note:
  */
 package com.ani.leetcode.easy;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author aniket
  *
@@ -43,7 +46,7 @@ public class JewelsandStones {
 	}
 	
 	
-    public  static int numJewelsInStones(String J, String S) {
+    public  static int numJewelsInStones1(String J, String S) {
 
     	char[]jewels = J.toCharArray();
     	char[] stones = S.toCharArray();
@@ -57,6 +60,32 @@ public class JewelsandStones {
     		}
     	}
 
+    	
+    return count;}
+    
+    
+    //The above solution has mn time complexity, this is not ideal this 
+    //can be solved using a hashset instead
+    
+    public  static int numJewelsInStones(String J, String S) {
+
+    	int count=0;
+    	Set setofJewels = new HashSet();
+
+    	char[]jewels = J.toCharArray();
+    	for(char jewel : jewels)
+    	setofJewels.add(jewel);
+
+    	char[] stones = S.toCharArray();
+    	
+    	//put all the stones in a hashset
+    	for(char stone:stones) {
+    		if(setofJewels.contains(stone)) {
+    			count++;
+    		}
+    	}
+    	
+    	
     	
     return count;}
 }
